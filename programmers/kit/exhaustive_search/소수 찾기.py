@@ -13,10 +13,12 @@ def solution(numbers):
 
     def dfs(idx, number):
 
-        if idx == len(numbers):
+        if number != '':
             n = int(number)
             if isPrime(n):
                 _set.add(n)
+
+        if idx == len(numbers):
             return
 
         for i in range(len(_numbers)):
@@ -27,11 +29,10 @@ def solution(numbers):
 
     _set = set()
     _numbers = list(numbers)
-    _numbers.append("")
     ch = [0 for _ in range(len(_numbers))]
     dfs(0, '')
     return len(_set)
 
 if __name__ == "__main__":
-    numbers = "17"
+    numbers = "011"
     print(solution(numbers))
