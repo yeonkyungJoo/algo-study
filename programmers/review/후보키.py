@@ -17,7 +17,12 @@ def solution(relation):
     for keys in keys_list:
 
         for a in answer:
-            if keys.find(a) >= 0:
+            rv = False
+            for i in range(len(a)):
+                n = a[i]
+                if n not in keys:
+                    rv = True
+            if not rv:
                 break
         else:
             _set = set()
